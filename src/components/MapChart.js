@@ -90,7 +90,9 @@ const [data, setData] = useState([]);
   
                       onMouseEnter={() => {
                         const { NAME } = geo.properties;
-                        setTooltipContent(`<b>${NAME}<b> <br/><br/> No Data`);
+                        setTooltipContent(
+                          `<span id="countryName">${NAME}</span> <br/><br/> 
+                          No Data`);
                       }}
   
                       onMouseLeave={() => {
@@ -126,11 +128,13 @@ const [data, setData] = useState([]);
                       onMouseEnter={() => {
                         const { NAME } = geo.properties;
                         setTooltipContent(`
-                          <span id="countryName">${NAME}</span> <br/><br/> 
+                          <div id="info"><span id="countryName">${NAME}</span> <br/><br/> 
                           <span id="l1">${d["people_vaccinated_per_hundred"]}%</span> <span id="l2">received at least one dose</span> <br/>
                           <span id="l3">${numberWithCommas(d["daily_vaccinations"])}</span> doses administered daily* <br/>
                           <span id="l4">${numberWithCommas(d["total_vaccinations"])}</span> doses administered in total<br/>
                           <span id="l5"><br/>Last updated ${d["date"]} <br/> *Rolling 7-day average</span>
+                          </div>
+                          
                             `);
                       }}
   
@@ -183,7 +187,7 @@ const [data, setData] = useState([]);
         <div id="bottomBar">
           <a href="https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/vaccinations.csv" class="bottomInfo">Data Source</a>
           <a href="https://github.com/DylanKroft/covid19VaccineTracker" class="bottomInfo">Project Code</a>
-          <a href="dylankroft.com" class="bottomInfo">Website</a>
+          <a href="http://www.dylankroft.com" class="bottomInfo">Website</a>
           <a href="https://www.buymeacoffee.com/dylankroft" class="bottomInfo">Support</a>
         </div>
       </div>

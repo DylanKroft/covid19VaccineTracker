@@ -13,9 +13,10 @@ function App() {
     <div>
       <MapChart setTooltipContent={setContent} />
       <ReactTooltip
+        className="b"
         arrowColor="transparent"
+        backgroundColor="transparent"
         html={true}
-        class="tooltip-custom"
       >{content}</ReactTooltip>
     </div>
   );

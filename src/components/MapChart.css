@@ -3,10 +3,18 @@ html, body {
   height: 100vh;
 }
 
-@media screen and (min-width: 1600px) {
-  #title {
-     font-size: 2em;
+
+@media screen and (max-device-width: 480px) {
+  body {
+    overflow: hidden;
   }
+  #map{
+    height:50%;
+  }
+
+  #key {
+position: absolute;
+top: 40em;  }
 }
 
 #top {
@@ -40,27 +48,16 @@ svg {
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 2000px;
   align-items: center;
   flex-grow: 10;
   height:30em;
 }
 
-#map {
-  flex-flow: row wrap;
-  display: block;
-
-}
-
 #mapOuter {
   display: flex;
-  align-items: stretch; 
   justify-content: center;
   height: 70%;
 }
-
-
-
 
 p {
   padding-top: 1px;
