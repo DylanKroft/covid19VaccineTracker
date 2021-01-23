@@ -1,0 +1,19 @@
+html, body {
+  margin: 0; 
+  height: 100vh;
+  font-size: 1.1em;
+}
+
+.__react_component_tooltip.type-light.border.place-bottom:before{
+  border-bottom:0px solid color;
+}
+
+.tooltip-custom {
+border: 3px solid #404040 !important;
+color: #404040 !important;
+background-color: white !important;
+border-radius: 0px !important;
+opacity: 100% !important;
+padding: 1em 1em 1em 1em !important;
+text-align: left !important;
+}
