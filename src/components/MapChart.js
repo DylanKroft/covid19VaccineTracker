@@ -3,19 +3,15 @@ import React from 'react';
 import { useEffect, useState } from "react";
 import { csv } from "d3-fetch";
 import * as d3 from 'd3';
-import ReactTooltip from "react-tooltip";
 import {
   ComposableMap,
   Geographies,
   Geography,
-  Marker,
   ZoomableGroup,
 } from "react-simple-maps";
-import { geoMercator } from 'd3'
 
 
 
-let root = document.documentElement;
 const width = window.screen.width;
 const height = window.screen.height;
 const suffix = "px" || '';
@@ -63,7 +59,9 @@ const [data, setData] = useState([]);
             % of the world has received at least one dose</div>
         </div>
       </div>
-      <div id="mapContainer">
+      <div id="mapOuter">
+        <div id="leftBuffer"></div> 
+        <div id="mapContainer">
         <ComposableMap 
         width="1200" 
         style={{ width: "100%"}} 
@@ -91,7 +89,7 @@ const [data, setData] = useState([]);
                       key={geo.rsmKey}
   
                       onMouseEnter={() => {
-                        const { NAME, POP_EST } = geo.properties;
+                        const { NAME } = geo.properties;
                         setTooltipContent(`<b>${NAME}<b> <br/><br/> No Data`);
                       }}
   
@@ -126,7 +124,7 @@ const [data, setData] = useState([]);
                       key={geo.rsmKey}
   
                       onMouseEnter={() => {
-                        const { NAME, POP_EST } = geo.properties;
+                        const { NAME } = geo.properties;
                         setTooltipContent(`
                           <span id="countryName">${NAME}</span> <br/><br/> 
                           <span id="l1">${d["people_vaccinated_per_hundred"]}%</span> <span id="l2">received at least one dose</span> <br/>
@@ -177,16 +175,16 @@ const [data, setData] = useState([]);
           <li class="myli" id="k7"><p>30</p></li>
           <li class="myli" id="k8"><p>100</p></li>
           <li id="k9"><p id="buffer2">%</p></li>
-
         </ul>
       </div>
-      
+        <div id="rightBuffer"></div> 
+      </div>
       <div id="bottom">
         <div id="bottomBar">
           <a href="https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/vaccinations.csv" class="bottomInfo">Data Source</a>
           <a href="https://github.com/DylanKroft/covid19VaccineTracker" class="bottomInfo">Project Code</a>
-          <a href="dylankroft.me" class="bottomInfo">Website</a>
-          <p class="bottomInfo">Support</p>
+          <a href="dylankroft.com" class="bottomInfo">Website</a>
+          <a href="https://www.buymeacoffee.com/dylankroft" class="bottomInfo">Support</a>
         </div>
       </div>
     </div>

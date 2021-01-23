@@ -9,6 +9,9 @@ html, body {
   }
 }
 
+#top {
+  background-color: white;
+}
 
 #mainContainer {
   height: 100vh;
@@ -33,23 +36,31 @@ svg {
 }
 
 #mapContainer {
+  background-color: white;
   position: relative;
   display: flex;
   flex-direction: column;
-  left: 10%;
-  width: 80%;
-  height: 72%;
-  max-height: calc(var(--height) / 1.5);
+  width: 2000px;
   align-items: center;
-  margin-top: 2em;
-  padding: 0px;
-  
+  flex-grow: 10;
+  height:30em;
 }
 
 #map {
   flex-flow: row wrap;
-  max-height: calc(var(--height) / 1.5);
+  display: block;
+
 }
+
+#mapOuter {
+  display: flex;
+  align-items: stretch; 
+  justify-content: center;
+  height: 70%;
+}
+
+
+
 
 p {
   padding-top: 1px;
@@ -72,6 +83,9 @@ p {
   justify-content: center;
   font-size: calc(0.6vw + 5px);
   max-width: calc(var(--width)/3);
+  padding: calc(1px + 0.5%);
+  padding-bottom: calc(3px + 2%);
+  background-color: white;
 
 }
 
@@ -186,20 +200,21 @@ p {
 }
 
 #bottom {
-  position: absolute;
+  position: fixed;
+  font-size: 0.85em;
   width: 100%;
   bottom: 0;
-  text-align: center;
   color: #808080;
   display:inline;
   display: flex;
   align-items: stretch; 
-  justify-content: center;
+  justify-content: left;
   background-color: white;
   
 }
 
 #bottomBar {
+  margin-left: 1em;
   text-align: center;
   color: #808080;
   display:inline;
