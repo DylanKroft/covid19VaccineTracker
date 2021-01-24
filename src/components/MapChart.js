@@ -188,7 +188,7 @@ const [data, setData] = useState([]);
           <a href="https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/vaccinations.csv" class="bottomInfo">Data Source</a>
           <a href="https://github.com/DylanKroft/covid19VaccineTracker" class="bottomInfo">Project Code</a>
           <a href="http://www.dylankroft.com" class="bottomInfo">Website</a>
-          <a href="https://www.buymeacoffee.com/dylankroft" class="bottomInfo">Support</a>
+          <a href="https://www.buymeacoffee.com/dylankroft" class="bottomInfo">Support Me :D</a>
         </div>
       </div>
     </div>
