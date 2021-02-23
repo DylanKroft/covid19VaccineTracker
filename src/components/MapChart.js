@@ -41,7 +41,7 @@ const [data, setData] = useState([]);
       csv(url).then((data) => {
         setData(data);
         const totVaxedObj = data.slice().reverse().find((s) => s.iso_code === "OWID_WRL");
-        totVaxed = totVaxedObj["people_vaccinated_per_hundred"];
+        totVaxed = totVaxedObj["total_vaccinations_per_hundred"];
         document.documentElement.style.setProperty(`--totVaxed`, totVaxed + "%");
         document.getElementById("percentage").innerHTML = totVaxed
 
@@ -56,7 +56,7 @@ const [data, setData] = useState([]);
           <div id="progressBar"></div>
           <div id="popVaxContainer"> 
             <div id="percentage"> </div>
-            % of the world has received at least one dose</div>
+            doses have been administered per 100 people worldwide</div>
         </div>
       </div>
       <div id="mapOuter">
@@ -129,10 +129,10 @@ const [data, setData] = useState([]);
                         const { NAME } = geo.properties;
                         setTooltipContent(`
                           <div id="info"><span id="countryName">${NAME}</span> <br/><br/> 
-                          <span id="l1">${d["people_vaccinated_per_hundred"]}%</span> <span id="l2">received at least one dose</span> <br/>
+                          <span id="l1">${d["total_vaccinations_per_hundred"]}%</span> <span id="l2">doses administered per 100 people</span> <br/>
                           <span id="l3">${numberWithCommas(d["daily_vaccinations"])}</span> doses administered daily* <br/>
                           <span id="l4">${numberWithCommas(d["total_vaccinations"])}</span> doses administered in total<br/>
-                          <span id="l5"><br/>Last updated ${d["date"]} <br/> *Rolling 7-day average</span>
+                          <span id="l5"><br/>Last updated ${d["date"]} <br/> *7-day Rolling Average</span>
                           </div>
                           
                             `);

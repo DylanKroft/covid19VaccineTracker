@@ -124,7 +124,7 @@ p {
 
 #progressBar {
   background-color: #F8EEFF;
-  background: linear-gradient(to right, #AAD0EA 0%, #AAD0EA var(--totVaxed), white var(--totVaxed), white 100%);
+  background: linear-gradient(to right, #72B2DE 0%, #3994D1 var(--totVaxed), white var(--totVaxed), white 100%);
   width: 100%;
   height: 100%;
   border-style: solid;
@@ -135,7 +135,7 @@ p {
 #percentage {
   color: #404040;
   font-weight: 700;
-  font-size: 1.5em;
+  font-size: 1.25em;
   margin-left: 10px;
   margin-right: 15px;
 }
